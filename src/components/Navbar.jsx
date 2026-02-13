@@ -1,16 +1,13 @@
-import React from 'react'
-import logo from '../assets/NoteBaseLogo.png';
-
 const Navbar = () => {
   return (
-  <div className='flex justify-around bg-red-400 relative'>
-  <div className='flex items-center left-5 absolute'>
-    <img className='w-20 h-20 z-10' src={logo} alt="" />
-    <span className='text-white font-bold text-3xl'>NoteBase</span>
-  </div>
-  <div className= "bg-white flex-1 h-0.5"></div>
-</div>
-  )
-}
+    <div className="flex justify-between items-center px-6 py-4 bg-gray-900 text-white">
+      <h1 className="text-2xl font-bold">NoteBase</h1>
+      <input
+        className="bg-gray-800 px-4 py-2 rounded-lg outline-none"
+        placeholder="Search notes..."
+      />
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;
