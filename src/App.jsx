@@ -1,15 +1,18 @@
-import { useState } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
+import NoteCard from "./components/NoteCard";
+import NotesGrid from "./components/NotesGrid";
 
 function App() {
-
   return (
-    <>
-    <div className="bg-black h-screen flex flex-rowjustify-center items-center">
-    <Navbar/>
-    <div className="bg-white flex-1 h-0.5"></div>
+    <div>
+      <Navbar />
+       <NoteCard
+        title="Project Ideas"
+        content="Build portfolio, Start blog"
+      />
+      <NotesGrid/>
     </div>
-    </>
   );
 }
 
