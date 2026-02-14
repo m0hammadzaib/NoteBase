@@ -3,3 +3,8 @@
   justify-items: center;
   align-items: center;
 } */
+ body{
+  display: flex;
+  background-color: black;
+  justify-content: center;
+ }
