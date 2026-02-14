@@ -8,7 +8,7 @@ import search from "../assets/search.svg";
 
 const Navbar = () => {
   return (
-   <div className='bg-black justify-around items-center border-b-2 border-gray-300 p-5 ps-10 flex flex-row gap-20 border-b-2'>
+   <div className='bg-black justify-around items-center  border-gray-300 p-5 ps-10 flex flex-row gap-20 border-b-2'>
     <div className='items-center gap-1 text-white text-3xl flex [&>span]:font-bold'>
      <img className='h-10 w-10' src={nbLogo}/>
      <span>Note</span><span className='text-amber-500'>Base</span>
@@ -28,6 +28,7 @@ const Navbar = () => {
       <button><img src={info} /></button>
       <button><img src={settings} /></button>
     </div>
+    <div className='right-5  flex rounded-full p-2 bg-white h-10 w-10 justify-center items-center'><span>Z</span></div>
   </div>
   )
 }
