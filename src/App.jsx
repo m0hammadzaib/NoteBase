@@ -7,6 +7,7 @@ import AddNote from "./components/AddNote";
 import { useState } from "react";
 
 
+
 function App() {
   const toggleDrawer=()=>{
     setopen(prev=>!prev)
