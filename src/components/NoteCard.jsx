@@ -1,16 +1,19 @@
 import React from 'react'
 
-const NoteCard = ({ title, content }) => {
+const NoteCard = ({notes}) => {
   return (
-    <div style={{
-      background: "#222",
-      color: "white",
-      padding: "20px",
-      margin: "20px",
-      borderRadius: "10px"
-    }}>
-      <h2>{title}</h2>
-      <p>{content}</p>
+ <div style={{display: "grid",gridTemplateColumns: "repeat(3, 1fr)",gap: "20px",padding: "20px"}}>
+      {notes.length === 0 ? (
+        <p style={{ color: "white" }}>No notes yet...</p>
+      ) : (
+        notes.map(note => (
+          <NoteCard
+            key={note.id}
+            title={note.title}
+            content={note.content}
+          />
+        ))
+      )}
     </div>
   );
 };

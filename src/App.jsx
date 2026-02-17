@@ -12,15 +12,13 @@ function App() {
   };
 
   const [open, setopen] = useState(false);
+  const [active, setactive] = useState(false);
+  const [notes, setnotes] = useState([]);
   return (
     <div className="bg-black max-h-25">
       <Navbar toggleDrawer={()=>setopen(prev=>!prev)} />
         <Sidebar open={open} toggleDrawers={toggleDrawer}/>
-       <NoteCard
-        title="Project Ideas"
-        content="Build portfolio, Start blog"
-      />
-      <NotesGrid/>
+      <NotesCard notes={notes}/>
     </div>
   );
 }
