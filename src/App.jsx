@@ -6,29 +6,25 @@ import Sidebar from "./components/Sidebar";
 import AddNote from "./components/AddNote";
 import { useState } from "react";
 
-
-
 function App() {
-  const toggleDrawer=()=>{
-    setopen(prev=>!prev)
+  const [notes, setNotes] = useState([]);
+  const [open, setOpen] = useState(false);
+
+  
+  const addNote = (newNote) => {
+    setNotes(prev => [...prev, newNote]);
   };
 
-  const handleSubmit = () =>{
-       setnotes([...notes,change])
-  };
-
-  const [open, setopen] = useState(false);
-  const [active, setactive] = useState(false);
-  const [notes, setnotes] = useState([]);
-  const [change, setchange] = useState("");
   return (
-    <div className="bg-black max-h-25">
-      <Navbar toggleDrawer={()=>setopen(prev=>!prev)} />
-        <Sidebar open={open} toggleDrawers={toggleDrawer}/>
-        <AddNote add={handleSubmit} change={setchange}/>
-      <NoteCard notes={notes}/>
+    <div className="bg-black min-h-screen">
+      <Navbar toggleDrawer={() => setOpen(prev => !prev)} />
+      <Sidebar open={open} />
+
+      <AddNote addNote={addNote} />
+      <NotesGrid notes={notes} />
     </div>
   );
 }
+
 
 export default App;

@@ -1,15 +1,33 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
 
-const AddNote = ({change,add}) => {
+const AddNote = ({ addNote }) => {
+  const [input, setInput] = useState("");
+
+  const handleAdd = () => {
+    if (!input.trim()) return;
+
+    const newNote = {
+      id: Date.now(),
+      title: input,
+      content: ""
+    };
+
+    addNote(newNote);
+    setInput("");
+  };
+
   return (
-    <div>
-      <div className='w-100 flex bg-black text-white border-amber-400 p-2 rounded-3xl'>
-        <input onChange={change} className='w-100 bg-black text-white outline-0 bord ' type="text" placeholder='Enter your notes'/>
-        <button className='p-3 border bg-black text-white rounded-3xl' onClick={add}>+</button>
-      </div>
+    <div className='w-100 border-white border rounded-3xl p-4 relative' >
+      <input className='text-white  outline-0'
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Enter note"
+      />
+      <button className='text-white p-3 border-white border rounded-3xl right-3 fixed' onClick={handleAdd}>+</button>
     </div>
-  )
-}
+  );
+};
+
 
 export default AddNote
