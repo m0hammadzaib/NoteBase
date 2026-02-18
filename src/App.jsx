@@ -4,7 +4,7 @@ import NoteCard from "./components/NoteCard";
 import NotesGrid from "./components/NotesGrid";
 import Sidebar from "./components/Sidebar";
 import AddNote from "./components/AddNote";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function App() {
   const [notes, setNotes] = useState([]);
