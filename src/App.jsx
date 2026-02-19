@@ -1,30 +1,11 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import NoteCard from "./components/NoteCard";
-import NotesGrid from "./components/NotesGrid";
-import Sidebar from "./components/Sidebar";
-import AddNote from "./components/AddNote";
-import { useState,useEffect } from "react";
+import React from 'react'
 
-function App() {
-  const [notes, setNotes] = useState([]);
-  const [open, setOpen] = useState(false);
-
-  
-  const addNote = (newNote) => {
-    setNotes(prev => [...prev, newNote]);
-  };
-
+const App = () => {
   return (
-    <div className="bg-black min-h-screen">
-      <Navbar toggleDrawer={() => setOpen(prev => !prev)} />
-      <Sidebar open={open} />
-
-      <AddNote addNote={addNote} />
-      <NotesGrid notes={notes} />
+    <div className='bg-black flex  h-screen w-screen justify-center items-center text-3xl font-extrabold text-white '>
+      this is zaib
     </div>
-  );
+  )
 }
 
-
-export default App;
+export default App
