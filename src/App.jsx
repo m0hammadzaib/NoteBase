@@ -8,6 +8,9 @@ const App = () => {
     <div>
      <Navbar/>
      <Sidebar/>
+     <div className="ml-56 pt-24 px-10">
+  
+</div>
     </div>
     </>
   )
