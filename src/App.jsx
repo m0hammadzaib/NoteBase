@@ -1,10 +1,15 @@
 import React from 'react'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 
 const App = () => {
   return (
-    <div className='bg-black flex  h-screen w-screen justify-center items-center text-3xl font-extrabold text-white '>
-      this is zaib
+    <>
+    <div>
+     <Navbar/>
+     <Sidebar/>
     </div>
+    </>
   )
 }
 
