@@ -4,6 +4,8 @@ import Sidebar from './components/Sidebar'
 import NotesInput from './components/NotesInput'
 
 const App = () => {
+  const [notes, setNotes] = useState([]);
+  
   return (
     <>
     <div>
