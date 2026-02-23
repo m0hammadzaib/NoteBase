@@ -1,58 +1,77 @@
-import React from 'react'
-import { useState } from 'react';
+import { useState } from "react";
+import React from "react";
 
-const NoteCard = ({note,deleteNote,updateNote}) => {
-
+const NoteCard = ({
+  note,
+  updateNote,
+  toggleImportant,
+  toggleArchive,
+  moveToTrash,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-const [editTitle, setEditTitle] = useState(note.title);
-const [editContent, setEditContent] = useState(note.content);
+  const [editTitle, setEditTitle] = useState(note.title);
+  const [editContent, setEditContent] = useState(note.content);
 
-const handleOpen = () => {
-  setIsOpen(true);
-};
-
-const handleClose = () => {
-  if (
-    editTitle !== note.title ||
-    editContent !== note.content
-  ) {
+  const handleClose = () => {
     updateNote(note.id, editTitle, editContent);
-  }
-
-  setIsOpen(false);
-};
-
-
+    setIsOpen(false);
+  };
 
   return (
-    <>
-    {!isOpen?(
-    <div onClick={handleOpen} className='cursor-pointer'>
-       <div className="bg-white shadow-md rounded-xl p-4 border hover:shadow-lg transition">
-      <h3 className="font-bold text-lg mb-2">{note.title}</h3>
-      <p className="text-gray-700 text-sm">{note.content}</p>
-       <button onClick={() => deleteNote(note.id)}className="text-red-500 text-sm cursor-pointer">Delete</button>
-    </div>
-    </div>
-    ):
-    <div>
+    <div
+      className="break-inside-avoid bg-slate-800 rounded-xl p-4 mb-6 shadow-md hover:shadow-xl transition duration-200 cursor-pointer"
+      onClick={() => setIsOpen(true)}
+    >
+      {isOpen ? (
+        <>
           <input
             value={editTitle}
             onChange={(e) => setEditTitle(e.target.value)}
+            className="w-full bg-transparent outline-none mb-2 font-semibold text-white"
           />
-
           <textarea
             value={editContent}
             onChange={(e) => setEditContent(e.target.value)}
+            className="w-full bg-transparent outline-none resize-none text-slate-300"
           />
 
-          <button onClick={handleClose}>
-            Close
-          </button>
-        </div>
-  }
-    </>
-  )
-}
+          <div className="flex justify-end mt-3">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                handleClose();
+              }}
+              className="px-3 py-1 bg-blue-600 rounded text-sm"
+            >
+              Close
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          {note.title && (
+            <h3 className="font-semibold mb-2 text-white">
+              {note.title}
+            </h3>
+          )}
+          <p className="text-sm text-slate-300 whitespace-pre-wrap">
+            {note.content}
+          </p>
 
-export default NoteCard
+          <div
+            className="flex justify-end gap-4 mt-4 text-slate-400"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button onClick={() => toggleImportant(note.id)}>⭐</button>
+            <button onClick={() => toggleArchive(note.id)}>📦</button>
+            <button onClick={() => moveToTrash(note.id)} className="hover:text-red-400">
+              🗑
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default NoteCard;
