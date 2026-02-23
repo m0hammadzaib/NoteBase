@@ -62,11 +62,9 @@ const NoteCard = ({
             className="flex justify-end gap-4 mt-4 text-slate-400"
             onClick={(e) => e.stopPropagation()}
           >
-            <button onClick={() => toggleImportant(note.id)}>⭐</button>
-            <button onClick={() => toggleArchive(note.id)}>📦</button>
-            <button onClick={() => moveToTrash(note.id)} className="hover:text-red-400">
-              🗑
-            </button>
+            <button onClick={() => toggleImportant(note.id)}> <img  className="w-5 h-5" src="./src/assets/imp.svg"/></button>
+            <button onClick={() => toggleArchive(note.id)}> <img className="w-5 h-5" src="./src/assets/archive.svg"/></button>
+            <button onClick={() => moveToTrash(note.id)}><img className="w-5 h-5" src="./src/assets/trash.svg"/></button>
           </div>
         </>
       )}
