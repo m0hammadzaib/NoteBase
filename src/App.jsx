@@ -31,6 +31,17 @@ const App = () => {
     setNotes(prev=>prev.filter(note=> note.id != id))
   }
 
+  const updateNote = (id, newTitle, newContent) => {
+  setNotes(prevNotes =>
+    prevNotes.map(note =>
+      note.id === id
+        ? { ...note, title: newTitle, content: newContent }
+        : note
+    )
+  );
+};
+
+
   return (
     <>
     <div>
@@ -38,7 +49,7 @@ const App = () => {
      <Sidebar/>
      <div className="ml-56 pt-24 px-10">
        <NotesInput addNote={addNote}/>
-       <NotesGrid notes={notes} deleteNotes={deleteNote}/>
+       <NotesGrid notes={notes} deleteNotes={deleteNote} updateNotes={updateNote}/>
      </div>
     </div>
     </>
