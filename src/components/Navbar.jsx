@@ -12,15 +12,15 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
 
       <input
         type="text"
-        placeholder="Search your notes..."
+        placeholder="Search your notes...."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className="w-1/3 bg-slate-700 px-4 py-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
       />
 
       <div className="flex items-center gap-4">
-        <button className="text-slate-400 hover:text-white transition">
-          ⚙️
+        <button>
+          <img  className="w-6 h-6" src="./src/assets/settings.svg"/>
         </button>
 
         <div className="w-9 h-9 bg-slate-600 rounded-full flex items-center justify-center font-semibold">
