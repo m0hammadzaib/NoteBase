@@ -10,6 +10,13 @@ const App = () => {
     return savedNotes ? JSON.parse(savedNotes) : [];
   });
 
+  // settings modal states and features
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+const [theme, setTheme] = useState("dark");
+const [layout, setLayout] = useState("masonry");
+const [sortType, setSortType] = useState("newest");
+
+
   const [searchTerm, setSearchTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("notes"); 
   // notes | important | archive | trash
