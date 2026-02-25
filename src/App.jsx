@@ -107,6 +107,19 @@ const [sortType, setSortType] = useState("newest");
           moveToTrash={moveToTrash}
         />
       </div>
+      {isSettingsOpen && (
+  <SettingsModal
+    setIsSettingsOpen={setIsSettingsOpen}
+    theme={theme}
+    setTheme={setTheme}
+    layout={layout}
+    setLayout={setLayout}
+    sortType={sortType}
+    setSortType={setSortType}
+    notes={notes}
+    setNotes={setNotes}
+  />
+)}
     </div>
   );
 };

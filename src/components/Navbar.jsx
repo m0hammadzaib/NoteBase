@@ -19,7 +19,7 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
       />
 
       <div className="flex items-center gap-4">
-        <button>
+        <button onClick={() => setIsSettingsOpen(true)}>
           <img  className="w-6 h-6" src="./src/assets/settings.svg"/>
         </button>
 
