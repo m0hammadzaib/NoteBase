@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import NotesInput from "./components/NotesInput";
 import NotesGrid from "./components/NotesGrid";
+import SettingsModal from "./components/SettingsModal";
 
 const App = () => {
   const [notes, setNotes] = useState(() => {
