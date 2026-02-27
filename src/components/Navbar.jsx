@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = ({ searchTerm, setSearchTerm }) => {
+const Navbar = ({ searchTerm, setSearchTerm,setIsSettingsOpen }) => {
   return (
     <div className="h-16 bg-slate-800 fixed w-full top-0 z-50 shadow-md flex items-center justify-between px-6">
       <div className="flex items-center gap-3">
@@ -18,14 +18,10 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
         className="w-1/3 bg-slate-700 px-4 py-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
       />
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 relative">
         <button onClick={() => setIsSettingsOpen(true)}>
           <img  className="w-6 h-6" src="./src/assets/settings.svg"/>
         </button>
-
-        <div className="w-9 h-9 bg-slate-600 rounded-full flex items-center justify-center font-semibold">
-          Z
-        </div>
       </div>
     </div>
   );

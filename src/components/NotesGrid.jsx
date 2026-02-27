@@ -2,17 +2,39 @@ import NoteCard from "./NoteCard";
 
 const NotesGrid = ({
   notes,
+  layout,
   updateNote,
   toggleImportant,
   toggleArchive,
   moveToTrash,
 }) => {
   if (notes.length === 0) {
-    return <p className="text-slate-400">No notes found.</p>;
-  }
+  return (
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400 pointer-events-none">
+      
+      <img
+        src="/src/assets/empty.svg"
+        alt="No notes"
+        className="w-52 mb-6 opacity-80"
+      />
+
+      <h2 className="text-xl font-semibold mb-2">
+        No notes yet
+      </h2>
+
+    </div>
+  );
+}
+
 
   return (
-    <div className="columns-4 gap-6">
+    <div
+      className={
+        layout === "grid"
+          ? "grid grid-cols-3 gap-6"
+          : "columns-4 gap-6"
+      }
+    >
       {notes.map((note) => (
         <NoteCard
           key={note.id}

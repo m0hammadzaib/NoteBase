@@ -80,49 +80,72 @@ const [sortType, setSortType] = useState("newest");
     );
   };
 
-  const filteredNotes = notes
-    .filter((note) => {
-      if (activeFilter === "important") return note.isImportant && !note.isTrashed;
-      if (activeFilter === "archive") return note.isArchived && !note.isTrashed;
-      if (activeFilter === "trash") return note.isTrashed;
-      return !note.isArchived && !note.isTrashed;
-    })
-    .filter(
-      (note) =>
-        note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        note.content.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+ const filteredNotes = notes
+  .filter((note) => {
+    if (activeFilter === "important")
+      return note.isImportant && !note.isTrashed;
+    if (activeFilter === "archive")
+      return note.isArchived && !note.isTrashed;
+    if (activeFilter === "trash") return note.isTrashed;
+    return !note.isArchived && !note.isTrashed;
+  })
+  .filter(
+    (note) =>
+      note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      note.content.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  .sort((a, b) => {
+    if (sortType === "newest") return b.createdAt - a.createdAt;
+    return a.createdAt - b.createdAt;
+  });
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-200">
-      <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <Sidebar activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
+     <div
+    className={`min-h-screen ${
+      theme === "dark"
+        ? "bg-slate-900 text-slate-200"
+        : "bg-slate-100 text-slate-900"
+    }`}
+  >
+    <Navbar
+      searchTerm={searchTerm}
+      setSearchTerm={setSearchTerm}
+      setIsSettingsOpen={setIsSettingsOpen}
+    />
 
-      <div className="ml-56 pt-24 px-10">
-        <NotesInput addNote={addNote} />
-        <NotesGrid
-          notes={filteredNotes}
-          updateNote={updateNote}
-          toggleImportant={toggleImportant}
-          toggleArchive={toggleArchive}
-          moveToTrash={moveToTrash}
-        />
-      </div>
-      {isSettingsOpen && (
-  <SettingsModal
-    setIsSettingsOpen={setIsSettingsOpen}
-    theme={theme}
-    setTheme={setTheme}
-    layout={layout}
-    setLayout={setLayout}
-    sortType={sortType}
-    setSortType={setSortType}
-    notes={notes}
-    setNotes={setNotes}
-  />
-)}
+    <Sidebar
+      activeFilter={activeFilter}
+      setActiveFilter={setActiveFilter}
+    />
+
+    <div className="ml-56 pt-24 px-10">
+      <NotesInput addNote={addNote} />
+
+      <NotesGrid
+        notes={filteredNotes}
+        layout={layout}
+        updateNote={updateNote}
+        toggleImportant={toggleImportant}
+        toggleArchive={toggleArchive}
+        moveToTrash={moveToTrash}
+      />
     </div>
-  );
+
+    {isSettingsOpen && (
+      <SettingsModal
+        setIsSettingsOpen={setIsSettingsOpen}
+        theme={theme}
+        setTheme={setTheme}
+        layout={layout}
+        setLayout={setLayout}
+        sortType={sortType}
+        setSortType={setSortType}
+        notes={notes}
+        setNotes={setNotes}
+      />
+    )}
+  </div>
+);
 };
 
 export default App;
