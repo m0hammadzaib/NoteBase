@@ -32,13 +32,13 @@ const NoteCard = ({
       <input
         value={editTitle}
         onChange={(e) => setEditTitle(e.target.value)}
-        className="w-full bg-transparent outline-none mb-4 text-xl font-bold text-white"
+        className="w-full bg-transparent outline-none mb-4 text-xl font-bold text-white rounded-xl"
       />
 
       <textarea
         value={editContent}
         onChange={(e) => setEditContent(e.target.value)}
-        className="flex-1 w-full bg-transparent outline-none resize-none text-slate-300"
+        className="flex-1 w-full bg-transparent outline-none resize-none text-slate-300 rounded-xl"
       />
 
       <div className="flex justify-end mt-4">

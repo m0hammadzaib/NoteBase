@@ -24,7 +24,7 @@ const NotesInput = ({ addNote }) => {
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full bg-transparent outline-none mb-2 font-semibold text-white"
+            className="w-full bg-transparent outline-none mb-2 font-semibold text-white rounded-l"
           />
         )}
 
@@ -33,7 +33,7 @@ const NotesInput = ({ addNote }) => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           rows={isOpen ? 3 : 1}
-          className="w-full bg-transparent outline-none resize-none text-slate-300"
+          className="w-full bg-transparent outline-none resize-none text-slate-300 rounded-xl"
         />
 
         {isOpen && (
