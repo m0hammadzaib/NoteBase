@@ -27,7 +27,7 @@ const NoteCard = ({
     
     <div
       onClick={(e) => e.stopPropagation()}
-      className="w-[600px] max-h-[80vh] bg-slate-800 p-6 rounded-2xl shadow-xl flex flex-col"
+      className="w-[600px] max-h-3/4 h-full bg-slate-800 p-6 rounded-2xl shadow-xl flex flex-col"
     >
       <input
         value={editTitle}
@@ -74,7 +74,6 @@ const NoteCard = ({
             <button onClick={() => moveToTrash(note.id)}><img className="w-5 h-5" src="./src/assets/trash.svg"/></button>
           </div>
         </>
-      )}
     </div>
   );
 };
