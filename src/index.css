@@ -65,7 +65,3 @@ input:focus, textarea:focus, select:focus {
 .modal-animate {
   animation: fadeIn 0.2s ease forwards;
 };
-
-input{
-  border-radius: 12px;
-}
