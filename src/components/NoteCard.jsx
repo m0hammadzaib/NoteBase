@@ -19,7 +19,7 @@ const NoteCard = ({
 
   return (
     <div
-      className="break-inside-avoid bg-slate-800 rounded-xl p-4 mb-6 shadow-md hover:shadow-xl transition duration-200 cursor-pointer"
+      className="break-inside-avoid block bg-slate-800 rounded-xl p-4 mb-6 shadow-md hover:shadow-xl transition duration-200 cursor-pointer max-h-[400px] overflow-hidden"
       onClick={() => setIsOpen(true)}
     >
      {isOpen && (
@@ -61,7 +61,7 @@ const NoteCard = ({
               {note.title}
             </h3>
           )}
-          <p className="text-sm text-slate-300 whitespace-pre-wrap">
+          <p className="text-sm text-slate-300 whitespace-pre-wrap line-clamp-6">
             {note.content}
           </p>
 
