@@ -65,3 +65,24 @@ input:focus, textarea:focus, select:focus {
 .modal-animate {
   animation: fadeIn 0.2s ease forwards;
 };
+
+
+:root {
+  --bg-main: #0f172a;        /* page background (slate-900) */
+  --bg-sidebar: #1e293b;     /* sidebar (slate-800) */
+  --bg-card: #1e293b;        /* note cards */
+  --bg-input: #334155;       /* search & inputs */
+
+  --text-primary: #f1f5f9;   /* main white text */
+  --text-secondary: #94a3b8; /* muted text */
+
+  --border-color: #334155;
+
+  --btn-primary: #2563eb;    /* blue add button */
+  --btn-primary-hover: #1d4ed8;
+
+  --btn-warning: #d97706;    /* clear trash (amber) */
+  --btn-danger: #dc2626;     /* delete all (red) */
+
+  --overlay-blur: rgba(15, 23, 42, 0.65);
+}

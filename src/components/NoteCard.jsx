@@ -19,7 +19,7 @@ const NoteCard = ({
 
   return (
     <div
-      className="break-inside-avoid block bg-slate-800 rounded-xl p-4 mb-6 shadow-md hover:shadow-xl transition duration-200 cursor-pointer max-h-[400px] overflow-hidden"
+      className={`break-inside-avoid block bg-slate-800 rounded-xl p-4 mb-6 shadow-md hover:shadow-xl transition duration-200 cursor-pointer max-h-[400px] overflow-hidden `}
       onClick={() => setIsOpen(true)}
     >
      {isOpen && (

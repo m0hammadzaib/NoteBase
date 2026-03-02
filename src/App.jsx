@@ -13,7 +13,14 @@ const App = () => {
 
   // settings modal states and features
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-const [theme, setTheme] = useState("dark");
+
+const [theme, setTheme] = useState(() => {
+  return localStorage.getItem("theme") || "dark";
+});
+useEffect(() => {
+  localStorage.setItem("theme", theme);
+}, [theme]);
+
 const [layout, setLayout] = useState("masonry");
 const [sortType, setSortType] = useState("newest");
 
@@ -85,7 +92,7 @@ const [sortType, setSortType] = useState("newest");
     if (activeFilter === "important")
       return note.isImportant && !note.isTrashed;
     if (activeFilter === "archive")
-      return note.isArchived && !note.isTrashed;
+      return note.isArchived && !note.isTrashed && !note.isImportant;
     if (activeFilter === "trash") return note.isTrashed;
     return !note.isArchived && !note.isTrashed;
   })
@@ -101,11 +108,7 @@ const [sortType, setSortType] = useState("newest");
 
   return (
      <div
-    className={`min-h-screen ${
-      theme === "dark"
-        ? "bg-slate-900 text-slate-200"
-        : "bg-slate-100 text-slate-900"
-    }`}
+    className={`min-h-screen ${theme === "dark"? "bg-slate-900 text-slate-200": "bg-slate-100 text-slate-900"}`}
   >
     <Navbar
       searchTerm={searchTerm}
