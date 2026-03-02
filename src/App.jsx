@@ -18,8 +18,13 @@ const [theme, setTheme] = useState(() => {
   return localStorage.getItem("theme") || "dark";
 });
 useEffect(() => {
-  localStorage.setItem("theme", theme);
-}, [theme]);
+    const root = document.documentElement;
+
+    root.classList.remove("dark", "light");
+    root.classList.add(theme);
+
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
 const [layout, setLayout] = useState("masonry");
 const [sortType, setSortType] = useState("newest");
@@ -108,8 +113,7 @@ const [sortType, setSortType] = useState("newest");
 
   return (
      <div
-    className={`min-h-screen ${theme === "dark"? "bg-slate-900 text-slate-200": "bg-slate-100 text-slate-900"}`}
-  >
+    className="min-h-screen bg-slate-900 text-slate-200">
     <Navbar
       searchTerm={searchTerm}
       setSearchTerm={setSearchTerm}
