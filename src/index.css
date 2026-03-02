@@ -66,29 +66,36 @@ input:focus, textarea:focus, select:focus {
   animation: fadeIn 0.2s ease forwards;
 };
 
+.dark {
+  /* Backgrounds */
+  --bg-main: #0f172a;        /* slate-900 */
+  --bg-secondary: #1e293b;   /* slate-800 */
+  --bg-tertiary: #334155;    /* slate-700 */
+  --bg-overlay: rgba(0,0,0,0.3);
+  
+  --bg-blue: #2563eb;        /* blue-600 */
+  --bg-gray-800: #1f2937;
+  --bg-gray-700: #374151;
+  --bg-gray-600: #4b5563;
+  --bg-yellow: #ca8a04;      /* yellow-600 */
+  --bg-red: #b91c1c;         /* red-700 */
 
-:root {
-  --bg-main: #0f172a;        /* page background (slate-900) */
-  --bg-sidebar: #1e293b;     /* sidebar (slate-800) */
-  --bg-card: #1e293b;        /* note cards */
-  --bg-input: #334155;       /* search & inputs */
+  /* Text */
+  --text-primary: #ffffff;
+  --text-main: #e2e8f0;      /* slate-200 */
+  --text-secondary: #cbd5e1; /* slate-300 */
+  --text-muted: #94a3b8;     /* slate-400 */
+  --text-danger: #ef4444;    /* red-500 */
 
-  --text-primary: #f1f5f9;   /* main white text */
-  --text-secondary: #94a3b8; /* muted text */
+  /* Borders */
+  --border-main: #334155;    /* slate-700 */
+  --border-gray: #4b5563;    /* gray-600 */
 
-  --border-color: #334155;
-
-  --btn-primary: #2563eb;    /* blue add button */
-  --btn-primary-hover: #1d4ed8;
-
-  --btn-warning: #d97706;    /* clear trash (amber) */
-  --btn-danger: #dc2626;     /* delete all (red) */
-
-  --overlay-blur: rgba(15, 23, 42, 0.65);
+  /* Focus */
+  --ring-focus: #3b82f6;     /* blue-500 */
 }
-
-.light {
-  --bg-main: #f8fafc;
+:root{
+   --bg-main: #f8fafc;
   --bg-sidebar: #e2e8f0;
   --bg-card: #ffffff;
   --bg-input: #e2e8f0;

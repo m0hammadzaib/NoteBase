@@ -23,11 +23,7 @@ const SettingsModal = ({
   return (
     <div className="fixed inset-0 bg-black/30 backdrop-blur-md bg-opacity-70 flex justify-center items-center z-50">
 
-      <div className={`modal-animate p-6 rounded-2xl w-96 space-y-6 ${
-          theme === "dark"
-            ? "bg-gray-800 text-white"
-            : "bg-white text-black"
-        }`}
+      <div className="modal-animate p-6 rounded-2xl w-96 space-y-6 bg-gray-800 text-white"
       >
         <h2 className="font-bold text-2xl">Settings</h2>
 
