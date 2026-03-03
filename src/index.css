@@ -65,56 +65,25 @@ input, textarea, select {
 .modal-animate {
   animation: fadeIn 0.2s ease forwards;
 };
+@custom-variant dark (&:where(.dark, .dark *));
 
-.dark {
-  /* Backgrounds */
-  --bg-main: #0f172a;        /* slate-900 */
-  --bg-secondary: #1e293b;   /* slate-800 */
-  --bg-tertiary: #334155;    /* slate-700 */
-  --bg-overlay: rgba(0,0,0,0.3);
-  
-  --bg-blue: #2563eb;        /* blue-600 */
-  --bg-gray-800: #1f2937;
-  --bg-gray-700: #374151;
-  --bg-gray-600: #4b5563;
-  --bg-yellow: #ca8a04;      /* yellow-600 */
-  --bg-red: #b91c1c;         /* red-700 */
+@theme{
+  /* Light Theme */
 
-  /* Text */
-  --text-primary: #ffffff;
-  --text-main: #e2e8f0;      /* slate-200 */
-  --text-secondary: #cbd5e1; /* slate-300 */
-  --text-muted: #94a3b8;     /* slate-400 */
-  --text-danger: #ef4444;    /* red-500 */
-
-  /* Borders */
-  --border-main: #334155;    /* slate-700 */
-  --border-gray: #4b5563;    /* gray-600 */
-
-  /* Focus */
-  --ring-focus: #3b82f6;     /* blue-500 */
---icon-filter: invert(0);
---icon-fill:black;
-
-};
-
-:root {
-
-  /* Backgrounds */
-  --bg-main: #f8fafc;          /* soft off-white (not pure white) */
-  --bg-secondary: #f1f5f9;     /* subtle cards */
-  --bg-tertiary: #e2e8f0;      /* inputs / hover */
+  --bg-main: #f8fafc;          
+  --bg-secondary: #f1f5f9;  
+  --bg-tertiary: #e2e8f0;     
   --bg-overlay: rgba(0,0,0,0.05);
 
-  --bg-blue: #2563eb;          /* keep brand consistent */
-  --bg-gray-800: #e5e7eb;      /* soft neutral panels */
+  --bg-blue: #2563eb;          
+  --bg-gray-800: #e5e7eb;    
   --bg-gray-700: #d1d5db;
   --bg-gray-600: #9ca3af;
-  --bg-yellow: #d97706;        /* slightly richer amber */
-  --bg-red: #dc2626;           /* strong but clean red */
+  --bg-yellow: #d97706;        
+  --bg-red: #dc2626;           
 
   /* Text */
-  --text-primary: #0f172a;     /* deep slate instead of black */
+  --text-primary: #0f172a; 
   --text-main: #1e293b;
   --text-secondary: #334155;
   --text-muted: #64748b;
@@ -128,4 +97,36 @@ input, textarea, select {
   --ring-focus: #3b82f6;
   --icon-filter: invert(1);
   --icon-fill:white;
+
+  /* -------------- */
+
+  /* Dark Theme */
+  --bg-main-dark: #0f172a;        /* slate-900 */
+  --bg-secondary-dark: #1e293b;   /* slate-800 */
+  --bg-tertiary-dark: #334155;    /* slate-700 */
+  --bg-overlay-dark: rgba(0,0,0,0.3);
+  
+  --bg-blue-dark: #2563eb;        /* blue-600 */
+  --bg-gray-800-dark: #1f2937;
+  --bg-gray-700-dark: #374151;
+  --bg-gray-600-dark: #4b5563;
+  --bg-yellow-dark: #ca8a04;      /* yellow-600 */
+  --bg-red-dark: #b91c1c;         /* red-700 */
+
+  /* Text */
+  --text-primary-dark: #ffffff;
+  --text-main-dark: #e2e8f0;      /* slate-200 */
+  --text-secondary-dark: #cbd5e1; /* slate-300 */
+  --text-muted-dark: #94a3b8;     /* slate-400 */
+  --text-danger-dark: #ef4444;    /* red-500 */
+
+  /* Borders */
+  --border-main-dark: #334155;    /* slate-700 */
+  --border-gray-dark: #4b5563;    /* gray-600 */
+
+  /* Focus */
+  --ring-focus-dark: #3b82f6;     /* blue-500 */
+--icon-filter-dark: invert(0);
+--icon-fill-dark:black;
+
 };

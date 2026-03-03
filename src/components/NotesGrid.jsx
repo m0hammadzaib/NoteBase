@@ -13,9 +13,9 @@ const NotesGrid = ({
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400 pointer-events-none">
       <img
-        src="/src/assets/empty.svg"
+        src="/src/assets/empty.png"
         alt="No notes"
-        className="w-52 mb-6 opacity-80"
+        className="w-60 mb-6 opacity-80"
       />
 
       <h2 className="text-xl font-semibold mb-2">

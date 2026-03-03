@@ -117,8 +117,8 @@ const [sortType, setSortType] = useState("newest");
   });
 
   return (
-     <div key={theme}
-    className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)]">
+     <div 
+    className="min-h-screen bg-[var(--bg-main)] dark:bg-[var(--bg-main-dark)] text-[var(--text-main)] dark:text-[var(--text-main-dark)]">
     <Navbar
       searchTerm={searchTerm}
       setSearchTerm={setSearchTerm}
