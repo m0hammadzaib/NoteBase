@@ -11,7 +11,6 @@ const NotesGrid = ({
   if (notes.length === 0) {
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400 pointer-events-none">
-      
       <img
         src="/src/assets/empty.svg"
         alt="No notes"

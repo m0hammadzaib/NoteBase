@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import NotesInput from "./components/NotesInput";
@@ -74,6 +74,7 @@ const [sortType, setSortType] = useState("newest");
     );
   };
 
+
   const toggleArchive = (id) => {
     setNotes((prev) =>
       prev.map((note) =>
@@ -113,7 +114,7 @@ const [sortType, setSortType] = useState("newest");
 
   return (
      <div
-    className="min-h-screen bg-slate-900 text-slate-200">
+    className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)]">
     <Navbar
       searchTerm={searchTerm}
       setSearchTerm={setSearchTerm}

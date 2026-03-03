@@ -93,23 +93,36 @@ input:focus, textarea:focus, select:focus {
 
   /* Focus */
   --ring-focus: #3b82f6;     /* blue-500 */
+--icon-filter: invert(0);
+
 }
-:root{
-   --bg-main: #f8fafc;
-  --bg-sidebar: #e2e8f0;
-  --bg-card: #ffffff;
-  --bg-input: #e2e8f0;
+:root {
 
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
+  /* Backgrounds */
+  --bg-main: #f8fafc;          /* soft off-white (not pure white) */
+  --bg-secondary: #f1f5f9;     /* subtle cards */
+  --bg-tertiary: #e2e8f0;      /* inputs / hover */
+  --bg-overlay: rgba(0,0,0,0.05);
 
-  --border-color: #cbd5e1;
+  --bg-blue: #2563eb;          /* keep brand consistent */
+  --bg-gray-800: #e5e7eb;      /* soft neutral panels */
+  --bg-gray-700: #d1d5db;
+  --bg-gray-600: #9ca3af;
+  --bg-yellow: #d97706;        /* slightly richer amber */
+  --bg-red: #dc2626;           /* strong but clean red */
 
-  --btn-primary: #2563eb;
-  --btn-primary-hover: #1d4ed8;
+  /* Text */
+  --text-primary: #0f172a;     /* deep slate instead of black */
+  --text-main: #1e293b;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-danger: #dc2626;
 
-  --btn-warning: #d97706;
-  --btn-danger: #dc2626;
+  /* Borders */
+  --border-main: #e2e8f0;
+  --border-gray: #cbd5e1;
 
-  --overlay-blur: rgba(0, 0, 0, 0.4);
+  /* Focus */
+  --ring-focus: #3b82f6;
+  --icon-filter: invert(1);
 }

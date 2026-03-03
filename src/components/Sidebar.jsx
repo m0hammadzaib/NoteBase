@@ -4,13 +4,13 @@ const Sidebar = ({ activeFilter, setActiveFilter }) => {
   const itemClass = (type) =>
     `mb-4 cursor-pointer ${
       activeFilter === type
-        ? "text-white font-semibold"
-        : "text-slate-400 hover:text-white"
+        ? "text-[var(--text-main)] font-semibold"
+        : "text-[var(--text-muted)] hover:text-white"
     }`;
 
   return (
-    <div className="w-56 bg-slate-800 h-screen fixed top-16 left-0 p-6 border-r border-slate-700">
-      <div className="mb-6 font-semibold text-white">Notes</div>
+    <div className="w-56 bg-[var(--bg-secondary)] h-screen fixed top-16 left-0 p-6 border-r border-[var(--bg-tertiary)]">
+      <div className="mb-6 font-semibold text-[var(--text-main)]">Notes</div>
 
       <div className={itemClass("notes")} onClick={() => setActiveFilter("notes")}>
         All Notes
