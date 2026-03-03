@@ -3,7 +3,7 @@ import  SettingsIcon from "../assets/settings.svg";
 
 const Navbar = ({ searchTerm, setSearchTerm,setIsSettingsOpen }) => {
   return (
-    <div className="h-16 bg-[var(--b)]  fixed w-full top-0 z-50 shadow-md flex items-center justify-between px-6">
+    <div className="h-16 bg-[var(--bg-secondary)]  fixed w-full top-0 z-50 shadow-md flex items-center justify-between px-6">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-md">
           <img src="https://www.svgrepo.com/show/190652/test.svg" alt="NoteBase Logo" />

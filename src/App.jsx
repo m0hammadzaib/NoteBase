@@ -25,6 +25,7 @@ useEffect(() => {
 
     localStorage.setItem("theme", theme);
   }, [theme]);
+  console.log("Theme value:", theme);
 
 const [layout, setLayout] = useState("masonry");
 const [sortType, setSortType] = useState("newest");
@@ -116,12 +117,13 @@ const [sortType, setSortType] = useState("newest");
   });
 
   return (
-     <div
+     <div key={theme}
     className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)]">
     <Navbar
       searchTerm={searchTerm}
       setSearchTerm={setSearchTerm}
       setIsSettingsOpen={setIsSettingsOpen}
+      theme={theme}
     />
 
     <Sidebar

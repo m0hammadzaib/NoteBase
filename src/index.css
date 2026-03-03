@@ -27,7 +27,7 @@ input, textarea, select {
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-input:focus, textarea:focus, select:focus {
+.search:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.6);
 }
@@ -96,7 +96,8 @@ input:focus, textarea:focus, select:focus {
 --icon-filter: invert(0);
 --icon-fill:black;
 
-}
+};
+
 :root {
 
   /* Backgrounds */
@@ -127,4 +128,4 @@ input:focus, textarea:focus, select:focus {
   --ring-focus: #3b82f6;
   --icon-filter: invert(1);
   --icon-fill:white;
-}
+};

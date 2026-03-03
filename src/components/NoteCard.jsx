@@ -25,15 +25,17 @@ const NoteCard = ({
 
   return (
     <div
-      className={`break-inside-avoid block bg-[var(--bg-secondary)] rounded-xl p-4 mb-6 shadow-md hover:shadow-xl transition duration-200 cursor-pointer max-h-[400px] overflow-hidden `}
+      className={`break-inside-avoid block bg-[var(--bg-secondary)] rounded-xl p-4 mb-6 shadow-md hover:shadow-xl transition duration-200 cursor-pointer max-h-[400px] overflow-hidden border border-transparent hover:border-gray-400`}
       onClick={() => setIsOpen(true)}
     >
      {isOpen && !note.isTrashed? (
-  <div className="fixed inset-0 bg-[var(--bg-overlay)] backdrop-blur-md flex justify-center items-center z-50">
+  <div className="fixed inset-0 bg-[var(--bg-overlay)] backdrop-blur-md flex justify-center items-center z-50 ">
     
     <div
       onClick={(e) => e.stopPropagation()}
       className="w-[600px] max-h-3/4 h-full bg-[var(--bg-secondary)] p-6 rounded-2xl shadow-xl flex flex-col"
+      // className="w-[600px] max-h-[75vh] bg-[var(--bg-secondary)] p-6 rounded-2xl shadow-xl flex flex-col"
+
     >
       <input
         value={editTitle}
@@ -44,7 +46,7 @@ const NoteCard = ({
       <textarea
         value={editContent}
         onChange={(e) => setEditContent(e.target.value)}
-        className="flex-1 w-full bg-transparent outline-none resize-none text-[var(--text=secondary)] rounded-xl"
+        className="flex-1 w-full bg-transparent outline-none text-[var(--text=secondary)] rounded-xl"
       />
 
       <div className="flex justify-end mt-4">
@@ -67,7 +69,7 @@ const NoteCard = ({
               {note.title}
             </h3>
           )}
-          <p className="text-sm text-[var(--text-secondary)] whitespace-pre-wrap line-clamp-6">
+          <p className="text-sm text-[var(--text-secondary)] whitespace-pre-wrap line-clamp-12">
             {note.content}
           </p>
 

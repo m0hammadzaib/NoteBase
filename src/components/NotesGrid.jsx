@@ -31,8 +31,11 @@ const NotesGrid = ({
     <div
       className={
         layout === "grid"
-          ? "grid grid-cols-3 gap-6"
+          // ? "grid grid-cols-3 gap-6"
+          ?"grid grid-cols-1 gap-6 w-[70%] mx-auto"
           : "columns-4 gap-6"
+
+
       }
     >
       {notes.map((note) => (

@@ -13,7 +13,7 @@ const NotesInput = ({ addNote }) => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mb-10">
+    <div className="max-w-xl mx-auto mb-10  border border-transparent hover:border-blue-600 rounded-xl">
       <div
         onClick={() => setIsOpen(true)}
         className="bg-[var(--bg-secondary)] rounded-xl p-4 shadow-md cursor-text"
@@ -40,7 +40,7 @@ const NotesInput = ({ addNote }) => {
           <div className="flex justify-end mt-3">
             <button
               onClick={handleAdd}
-              className="px-4 py-1.5 bg-[var(--bg-blue)] rounded-lg text-sm hover:bg-blue-700 transition"
+              className="px-4 py-1.5 bg-[var(--bg-blue)] text-white rounded-lg text-sm hover:bg-blue-700 transition"
             >
               Add
             </button>
