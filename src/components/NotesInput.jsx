@@ -16,7 +16,7 @@ const NotesInput = ({ addNote }) => {
     <div className="max-w-xl mx-auto mb-10  border border-transparent hover:border-blue-600 rounded-xl">
       <div
         onClick={() => setIsOpen(true)}
-        className="bg-[var(--bg-secondary)] rounded-xl p-4 shadow-md cursor-text"
+        className="bg-[var(--bg-secondary)]  dark:bg-[var(--bg-secondary-dark)] rounded-xl p-4 shadow-md cursor-text"
       >
         {isOpen && (
           <input
@@ -24,7 +24,7 @@ const NotesInput = ({ addNote }) => {
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full bg-transparent outline-none mb-2 font-semibold text-[var(--text-primary)] rounded-l"
+            className="w-full bg-transparent outline-none mb-2 font-semibold text-[var(--text-primary)] dark:text-[var(--text-primary-dark)] rounded-l"
           />
         )}
 
@@ -33,14 +33,14 @@ const NotesInput = ({ addNote }) => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           rows={isOpen ? 3 : 1}
-          className="w-full bg-transparent outline-none resize-none text-[var(--text-secondary)] rounded-xl"
+          className="w-full bg-transparent outline-none resize-none text-[var(--text-secondary)] dark:text-[var(--text-secondary-dark)] rounded-xl"
         />
 
         {isOpen && (
           <div className="flex justify-end mt-3">
             <button
               onClick={handleAdd}
-              className="px-4 py-1.5 bg-[var(--bg-blue)] text-white rounded-lg text-sm hover:bg-blue-700 transition"
+              className="px-4 py-1.5 bg-[var(--bg-blue)] dark:bg-[var(--bg-blue-dark)] text-white rounded-lg text-sm hover:bg-blue-700 transition"
             >
               Add
             </button>

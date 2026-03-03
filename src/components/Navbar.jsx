@@ -21,7 +21,7 @@ const Navbar = ({ searchTerm, setSearchTerm,setIsSettingsOpen }) => {
 
       <div className="flex items-center gap-4 relative">
         <button onClick={() => setIsSettingsOpen(true)}>
-          <img  className={`w-6 h-6 invert`} style={{ filter: "var(--icon-filter)" }} src={SettingsIcon}/>
+          <img  className={`w-6 h-6 invert`} style={{ filter: "var(--icon-filter)", filter:"dark:var(icon-filter-dark)"}} src={SettingsIcon}/>
        </button>
       </div>
     </div>
