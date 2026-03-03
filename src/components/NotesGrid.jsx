@@ -11,7 +11,7 @@ const NotesGrid = ({
 }) => {
   if (notes.length === 0) {
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400 pointer-events-none">
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-[var(--text-muted)]  dark:text-[var(--text-muted-dark)] pointer-events-none">
       <img
         src="/src/assets/empty.png"
         alt="No notes"

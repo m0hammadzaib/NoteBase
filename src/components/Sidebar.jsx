@@ -9,8 +9,8 @@ const Sidebar = ({ activeFilter, setActiveFilter }) => {
     }`;
 
   return (
-    <div className="w-56 bg-[var(--bg-secondary)] h-screen fixed top-16 left-0 p-6 border-r border-[var(--bg-tertiary)]">
-      <div className="mb-6 font-semibold text-[var(--text-main)]">Notes</div>
+    <div className="w-56 bg-[var(--bg-secondary)] dark:bg-[var(--bg-secondary-dark)] h-screen fixed top-16 left-0 p-6 border-r border-[var(--bg-tertiary)] dark:border-[var(--bg-tertiary-dark)] ">
+      <div className="mb-6 font-semibold text-[var(--text-main)] dark:text-[var(--text-main-dark)]">Notes</div>
 
       <div className={itemClass("notes")} onClick={() => setActiveFilter("notes")}>
         All Notes
