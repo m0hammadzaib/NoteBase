@@ -92,6 +92,9 @@ const [sortType, setSortType] = useState("newest");
       )
     );
   };
+    const toggleTrash=(id)=>{
+    setNotes((prev)=>prev.map((note)=>note.id===id?{...note,isTrashed:false}:note))
+  }
 
  const filteredNotes = notes
   .filter((note) => {
@@ -136,6 +139,7 @@ const [sortType, setSortType] = useState("newest");
         toggleImportant={toggleImportant}
         toggleArchive={toggleArchive}
         moveToTrash={moveToTrash}
+        toggleTrash={toggleTrash}
       />
     </div>
 

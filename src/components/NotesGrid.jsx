@@ -7,6 +7,7 @@ const NotesGrid = ({
   toggleImportant,
   toggleArchive,
   moveToTrash,
+  toggleTrash,
 }) => {
   if (notes.length === 0) {
   return (
@@ -42,6 +43,7 @@ const NotesGrid = ({
           toggleImportant={toggleImportant}
           toggleArchive={toggleArchive}
           moveToTrash={moveToTrash}
+          toggleTrash={toggleTrash}
         />
       ))}
     </div>

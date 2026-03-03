@@ -3,6 +3,7 @@ import React from "react";
 import ImportantIcon from "../assets/imp.svg?react";
 import ArchiveIcon from "../assets/archive.svg?react";
 import TrashIcon from "../assets/trash.svg?react";
+import RestoreIcon from "../assets/restore.svg?react";
 
 
 const NoteCard = ({
@@ -11,6 +12,7 @@ const NoteCard = ({
   toggleImportant,
   toggleArchive,
   moveToTrash,
+  toggleTrash,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [editTitle, setEditTitle] = useState(note.title);
@@ -26,7 +28,7 @@ const NoteCard = ({
       className={`break-inside-avoid block bg-[var(--bg-secondary)] rounded-xl p-4 mb-6 shadow-md hover:shadow-xl transition duration-200 cursor-pointer max-h-[400px] overflow-hidden `}
       onClick={() => setIsOpen(true)}
     >
-     {isOpen && (
+     {isOpen && !note.isTrashed? (
   <div className="fixed inset-0 bg-[var(--bg-overlay)] backdrop-blur-md flex justify-center items-center z-50">
     
     <div
@@ -58,7 +60,7 @@ const NoteCard = ({
       </div>
     </div>
   </div>
-)}
+):""}
          <>
           {note.title && (
             <h3 className="font-semibold mb-2 text-[var(--text-primary)]">
@@ -73,17 +75,19 @@ const NoteCard = ({
             className="flex justify-end gap-4 mt-4 text-[var(--text-muted)]"
             onClick={(e) => e.stopPropagation()}
           >
-            <button onClick={() => toggleImportant(note.id)}> 
-              {/* <img  className={`w-4 h-4`} style={{ filter: "var(--icon-filter)" }} src="./src/assets/imp.svg"/> */}
-              <ImportantIcon className={`h-4 w-4 ${note.isImportant?"stroke-yellow-800":"stroke-none"}`} style={{ filter: "var(--icon-filter)" }}/>
+            {note.isTrashed?(
+              <button onClick={()=>toggleTrash(note.id)}>
+                <RestoreIcon className={'w-5 h-5'} style={{filter:"var(--icon-filter)"}}/>
+                </button>
+            ):""}
+            <button className={`${note.isTrashed?"hidden":""}`} onClick={() => toggleImportant(note.id)}> 
+              <ImportantIcon className={`h-4 w-4 ${note.isImportant?"fill-[var(--icon-fill)]":"fill-none"}`} style={{filter:"var(--icon-filter)"}}/>
               </button>
-            <button onClick={() => toggleArchive(note.id)}> 
-              {/* <img className={`w-4 h-4`} style={{ filter: "var(--icon-filter)" }} src="./src/assets/archive.svg"/> */}
-              <ArchiveIcon className={`w-4 h-4 `} style={{filter:"var(--icon-filter)"}}/>
+            <button className={`${note.isTrashed?"hidden":""}`} onClick={() => toggleArchive(note.id)}> 
+              <ArchiveIcon className={`w-4 h-4 ${note.isArchived?"fill-[var(--icon-fill)]":"fill-none"}`} style={{filter:"var(--icon-filter)"}}/>
               </button>
-            <button onClick={() => moveToTrash(note.id)}>
-              <TrashIcon className={`w-4 h-4`} style={{filter:"var(--icon-filter)"}}/>
-              {/* <img className={`w-4 h-4`} style={{ filter: "var(--icon-filter)" }} src="./src/assets/trash.svg"/> */}
+            <button className={`${note.isTrashed?"hidden":""}`} onClick={() => moveToTrash(note.id)}>
+              <TrashIcon className={`w-4 h-4 `} style={{filter:"var(--icon-filter)"}}/>
               </button>
           </div>
         </>

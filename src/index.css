@@ -94,6 +94,7 @@ input:focus, textarea:focus, select:focus {
   /* Focus */
   --ring-focus: #3b82f6;     /* blue-500 */
 --icon-filter: invert(0);
+--icon-fill:black;
 
 }
 :root {
@@ -125,4 +126,5 @@ input:focus, textarea:focus, select:focus {
   /* Focus */
   --ring-focus: #3b82f6;
   --icon-filter: invert(1);
+  --icon-fill:white;
 }
