@@ -1,12 +1,13 @@
 import React from "react";
 import  SettingsIcon from "../assets/settings.svg";
+import logo from '../../public/NoteBase.svg';
 
 const Navbar = ({ searchTerm, setSearchTerm,setIsSettingsOpen }) => {
   return (
     <div className="h-16 bg-[var(--bg-secondary)] dark:bg-[var(--bg-secondary-dark)]   fixed w-full top-0 z-50 shadow-md flex items-center justify-between px-6">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-md">
-          <img src="https://www.svgrepo.com/show/190652/test.svg" alt="NoteBase Logo" />
+          <img src={logo} alt="NoteBase Logo" />
         </div>
         <h1 className="text-lg font-semibold text-[var(--text-primary)] dark:text-[var(--text-primary-dark)]">NoteBase</h1>
       </div>
@@ -21,7 +22,7 @@ const Navbar = ({ searchTerm, setSearchTerm,setIsSettingsOpen }) => {
 
       <div className="flex items-center gap-4 relative">
         <button onClick={() => setIsSettingsOpen(true)}>
-          <img  className={`w-6 h-6 invert`} style={{ filter: "var(--icon-filter)", filter:"dark:var(icon-filter-dark)"}} src={SettingsIcon}/>
+          <img  className={`w-6 h-6  invert dark:invert-0`}src={SettingsIcon}/>
        </button>
       </div>
     </div>

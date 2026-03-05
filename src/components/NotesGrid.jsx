@@ -19,7 +19,7 @@ const NotesGrid = ({
       />
 
       <h2 className="text-xl font-semibold mb-2">
-        No notes yet
+        No notes
       </h2>
 
     </div>

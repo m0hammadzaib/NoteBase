@@ -15,7 +15,11 @@ const NotesInput = ({ addNote }) => {
   return (
     <div className="max-w-xl mx-auto mb-10  border border-transparent hover:border-blue-600 rounded-xl">
       <div
-        onClick={() => setIsOpen(true)}
+        onClick={() =>{
+
+          if (!isOpen) setIsOpen(true);
+        }
+        }
         className="bg-[var(--bg-secondary)]  dark:bg-[var(--bg-secondary-dark)] rounded-xl p-4 shadow-md cursor-text"
       >
         {isOpen && (

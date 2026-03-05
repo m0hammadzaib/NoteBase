@@ -4,8 +4,8 @@ const Sidebar = ({ activeFilter, setActiveFilter }) => {
   const itemClass = (type) =>
     `mb-4 cursor-pointer ${
       activeFilter === type
-        ? "text-[var(--text-main)] font-semibold"
-        : "text-[var(--text-muted)] hover:text-white"
+        ? "text-[var(--text-main)] dark:text-[var(--text-main-dark)] font-semibold"
+        : "text-[var(--text-muted)] dark:text-[var(--text-muted-dark)] hover:text-white"
     }`;
 
   return (

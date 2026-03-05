@@ -24,10 +24,18 @@ useEffect(() => {
     root.classList.add(theme);
 
     localStorage.setItem("theme", theme);
-  }, [theme]);
-  console.log("Theme value:", theme);
+  }, [theme])
 
-const [layout, setLayout] = useState("masonry");
+  const [layout, setLayout] = useState(() => {
+    const savedLayout = localStorage.getItem("layout");
+    return savedLayout ? savedLayout : "masonry";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("layout", layout);
+  }, [layout]);
+
+
 const [sortType, setSortType] = useState("newest");
 
 

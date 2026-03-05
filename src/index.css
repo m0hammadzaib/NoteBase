@@ -97,6 +97,7 @@ input, textarea, select {
   --ring-focus: #3b82f6;
   --icon-filter: invert(1);
   --icon-fill:white;
+  --archive-fill:white;
 
   /* -------------- */
 
@@ -126,7 +127,7 @@ input, textarea, select {
 
   /* Focus */
   --ring-focus-dark: #3b82f6;     /* blue-500 */
---icon-filter-dark: invert(0);
---icon-fill-dark:black;
-
+--icon-filter: invert(0);
+--icon-fill-dark:white;
+--archive-fill:black;
 };
